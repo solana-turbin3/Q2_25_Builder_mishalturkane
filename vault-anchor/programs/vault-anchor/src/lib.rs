@@ -134,7 +134,7 @@ impl<'info> Payment<'info>{
             from: self.vault.to_account_info(),
             to: self.user.to_account_info(),
         };
-        let user_key = self.user.key(); //store in variable to extend lifetime, avoids "temporary value dropped" error
+        let user_key = self.user.key(); //store in variable to extend lifetime, avoids "temporary value dropped" 
         let seeds = &[
             b"vault",
             user_key.as_ref(),
