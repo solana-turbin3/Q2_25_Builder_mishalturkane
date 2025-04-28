@@ -1,16 +1,21 @@
+pub mod constants;
+pub mod error;
+pub mod instructions;
+pub mod state;
+
 use anchor_lang::prelude::*;
 
-declare_id!("55vfd2htikDeCfgQrLdW4r1tHDettRK9VMJYwFMjB72p");
+pub use constants::*;
+pub use instructions::*;
+pub use state::*;
+
+declare_id!("3LWpKUZnH3HAG9KUrYbVqqJPmN9DmKv8KypsnUDVf4ht");
 
 #[program]
 pub mod escrow_anchor {
     use super::*;
 
     pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
-        msg!("Greetings from: {:?}", ctx.program_id);
-        Ok(())
+        initialize::handler(ctx)
     }
 }
-
-#[derive(Accounts)]
-pub struct Initialize {}

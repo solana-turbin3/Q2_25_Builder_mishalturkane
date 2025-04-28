@@ -53,10 +53,9 @@ describe("vault-anchor", () => {
         "Your vault info",
         await provider.connection.getAccountInfo(vault)
       );
-      console.log(
-        "Your vault balance",
-        (await provider.connection.getBalance(vault)).toString()
-      );
+      const balance = await provider.connection.getBalance(provider.publicKey);
+    console.log("Balance is:", balance / anchor.web3.LAMPORTS_PER_SOL);
+
   });
 
   it("Withdraw 1 SOL", async () => {
@@ -71,10 +70,9 @@ describe("vault-anchor", () => {
       .rpc();
 
     console.log("\nYour transaction signature", tx);
-    console.log(
-      "Your vault balance",
-      (await provider.connection.getBalance(vault)).toString()
-    );
+    const balance = await provider.connection.getBalance(provider.publicKey);
+    console.log("Balance is:", balance / anchor.web3.LAMPORTS_PER_SOL);
+
   });
 
   it("Close vault", async () => {
@@ -89,9 +87,8 @@ describe("vault-anchor", () => {
       .rpc();
 
       console.log("\nYour transaction signature", tx);
-      console.log(
-        "Your vault info",
-        await provider.connection.getAccountInfo(vault)
-      );
+      const balance = await provider.connection.getBalance(provider.publicKey);
+    console.log("Balance is:", balance / anchor.web3.LAMPORTS_PER_SOL);
+
   });
 });
