@@ -9,7 +9,7 @@ pub use constants::*;
 pub use instructions::*;
 pub use state::*;
 
-declare_id!("FCZUzV8NZJQXUkrnEVKb1R7L4955ii4K4KQAGr49bEtW");
+declare_id!("BV5RuoBrTkSyjjUhdYBApY6TyUDsB9xGHWe7by3RnFTg");
 
 #[program]
 pub mod snap_ledger {

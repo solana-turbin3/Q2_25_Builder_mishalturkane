@@ -6,7 +6,7 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-snap_ledger = "FCZUzV8NZJQXUkrnEVKb1R7L4955ii4K4KQAGr49bEtW"
+snap_ledger = "BV5RuoBrTkSyjjUhdYBApY6TyUDsB9xGHWe7by3RnFTg"
 
 [registry]
 url = "https://api.apr.dev"
