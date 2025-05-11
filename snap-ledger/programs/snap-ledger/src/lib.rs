@@ -23,4 +23,9 @@ pub mod snap_ledger {
     pub fn initialize_customer(ctx: Context<InitCustomer> ,name: String, phone: String) -> Result<()>{
         initialize_customer::initialize_customer(ctx, name, phone)
     }
+
+    pub fn initialize_receipt(ctx: Context<InitReceipt>, name: String ,description: String,price:f64) -> Result<()>{
+        initialize_receipt::initialize_receipt(ctx, name, description, price)
+    }
+    
 }
