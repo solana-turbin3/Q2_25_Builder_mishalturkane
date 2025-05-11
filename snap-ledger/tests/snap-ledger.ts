@@ -109,6 +109,10 @@ describe("snap-ledger", () => {
       .rpc(); // Execute the transaction and send the request
 
     const receiptAccount = await program.account.receipt.fetch(receiptPda);
+    assert.equal(receiptAccount.itemName,name);
+    assert.equal(receiptAccount.itemDescription,description);
+    assert.equal(receiptAccount.itemPrice,amount);
+
     console.log("Reciept Account", receiptAccount);
     console.log("Your transaction signature", tx);
 
@@ -132,6 +136,8 @@ describe("snap-ledger", () => {
 
   // 6️⃣ Fetch receipt and assert (optional)
   const receiptAccount = await program.account.receipt.fetch(receiptPda);
+  assert.equal(receiptAccount.itemPrice,amount);
+  
   console.log("Receipt payment verified ✅", receiptAccount);
 
   })
