@@ -27,5 +27,9 @@ pub mod snap_ledger {
     pub fn initialize_receipt(ctx: Context<InitReceipt>, name: String ,description: String,price:f64) -> Result<()>{
         initialize_receipt::initialize_receipt(ctx, name, description, price)
     }
+
+    pub fn pay_bill(ctx: Context<PayBill>, amount: f64) -> Result<()>{
+        pay_bill::pay_bill(ctx, amount)
+    }
     
 }

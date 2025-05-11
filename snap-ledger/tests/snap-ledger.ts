@@ -13,7 +13,7 @@ describe("snap-ledger", () => {
 
   const program = anchor.workspace.snapLedger as Program<SnapLedger>;
   const customer = anchor.web3.Keypair.generate();
-
+  
   const [merchantPda, merchantBump] = anchor.web3.PublicKey.findProgramAddressSync(
     [Buffer.from("merchant"), provider.wallet.publicKey.toBuffer()],
     program.programId
@@ -41,7 +41,7 @@ describe("snap-ledger", () => {
     const category = "Gold Shop";
     const tx = await program.methods.initializeMerchant(name, category)
       .accounts({
-        merchant: merchantPda,
+        merchantAccount: merchantPda,
         authority: provider.wallet.publicKey,
         systemProgram: anchor.web3.SystemProgram.programId,
       })
@@ -92,13 +92,13 @@ describe("snap-ledger", () => {
     // Data for the receipt
     const name = "Gold chain";
     const description = "11.6638 grams gold";
-    const price = 115560.83;
+    const amount = 115560.83;
 
 
 
     // If everything is good, call the program method to initialize the receipt
     const tx = await program.methods
-      .initializeReceipt(name, description, price)
+      .initializeReceipt(name, description, amount)
       .accounts({
         receipt: receiptPda,          // PDA for receipt
         merchant: merchantPda,        // PDA for merchant
@@ -114,5 +114,26 @@ describe("snap-ledger", () => {
 
   });
 
+  it("Payment Done✅", async () => {
+    const amount = 115560.83;
+
+
+    const tx = await program.methods
+      .payBill(amount) // assuming lamports
+      .accounts({
+        receipt: receiptPda, // ✅ this must be Account<Receipt> ka publicKey
+        customer: provider.wallet.publicKey,
+        merchant: merchantPda,
+        authority: provider.wallet.publicKey,
+        systemProgram: anchor.web3.SystemProgram.programId,
+      })
+      .rpc();
+  console.log("✅ Transaction Signature:", tx);
+
+  // 6️⃣ Fetch receipt and assert (optional)
+  const receiptAccount = await program.account.receipt.fetch(receiptPda);
+  console.log("Receipt payment verified ✅", receiptAccount);
+
+  })
 
 });

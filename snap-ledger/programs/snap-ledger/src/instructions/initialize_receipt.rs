@@ -36,7 +36,7 @@ pub fn initialize_receipt(
 
     // Set the fields for the receipt account
     receipt.customer = ctx.accounts.customer.key();
-    receipt.merchant = ctx.accounts.merchant.key();
+    receipt.merchant = ctx.accounts.merchant.authority;
     receipt.timestamp = Clock::get()?.unix_timestamp; // Current timestamp
     receipt.item_name = name;  // Item name (e.g., "Gold Chain")
     receipt.item_description = description;  // Item description (e.g., "22K gold, 30 grams")
