@@ -12,7 +12,7 @@ snap_ledger = "BV5RuoBrTkSyjjUhdYBApY6TyUDsB9xGHWe7by3RnFTg"
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
+cluster = "Devnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
