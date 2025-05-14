@@ -5,7 +5,7 @@
 - [LOI](https://drive.google.com/file/d/1wddBJg6hhf1RyDO8-4cg022pYHrjt1UT/view?usp=drive_link)
 - [User Stories](https://drive.google.com/file/d/1N8JoGFYLxS5q9EFpGWUFtQKNQQaTl_mI/view?usp=drive_link)
 - [Arch Diagram](https://drive.google.com/file/d/1FeGMniJcwng4vjaIi-iUhED9kEeq-WVK/view?usp=drive_link)
-- [Deploed Contracct](https://explorer.solana.com/address/3EEkQkh4dQRysyEp7wE3PrSqNhpBbg91FhjtYEXK7Hsg?cluster=devnet)
+- [Deploed Contracct](https://explorer.solana.com/address/4M1ztMqBFjsZnhoTN1kbrKGzbNwRPSg64DQFgMKDorSw?cluster=devnet)
 
 ---
 
