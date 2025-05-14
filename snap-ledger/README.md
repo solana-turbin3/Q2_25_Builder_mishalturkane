@@ -7,5 +7,6 @@
 - [Arch Diagram](https://drive.google.com/file/d/1FeGMniJcwng4vjaIi-iUhED9kEeq-WVK/view?usp=drive_link)
 - [Deploed Contracct](https://explorer.solana.com/address/3EEkQkh4dQRysyEp7wE3PrSqNhpBbg91FhjtYEXK7Hsg?cluster=devnet)
 
-
+# Project Structure
+The contract follows a modular design with separate files for state management and business logic (instructions/contexts).
 
