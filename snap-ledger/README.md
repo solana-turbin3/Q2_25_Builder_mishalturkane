@@ -78,7 +78,8 @@ These handle transactions and interactions with the smart contract.
 
 ```
 
-- ``` initialize_customer.rs ``Initializes a customer account using a (PDA) with a unique seed derived from the merchant and customer keys, ensuring secure and unique account creation.
+- ``` initialize_customer.rs ``` Initializes a customer account using a (PDA) with a unique seed derived from the merchant and customer keys, ensuring secure and unique account creation.
+
 ``` bash
  #[account(
         init,
@@ -91,8 +92,6 @@ These handle transactions and interactions with the smart contract.
 
 ```
 
-
-```
 
 - ``` initialize_receipt.rs ``` Defines the Receipt struct to store transaction details between customer and merchant — like bill amount, timestamp, and payment status.
 
