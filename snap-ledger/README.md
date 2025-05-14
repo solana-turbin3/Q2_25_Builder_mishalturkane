@@ -108,8 +108,14 @@ These handle transactions and interactions with the smart contract.
 ---
 
 
+## Progress: 
+- Smartcontract ✅
+- Testing ✅
+- Frontend 🏗️
+---
 ## Future Roadmap
-- Develop User-Friendly Frontend
 - Implement PDF Bill Generation
-- Explore Payment Gateway Integration
 - Develop Merchant Analytics Dashboard
+---
+
+## Test Cases Passed ✅
