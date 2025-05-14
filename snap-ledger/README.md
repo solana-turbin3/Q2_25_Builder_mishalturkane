@@ -117,4 +117,4 @@ These handle transactions and interactions with the smart contract.
    - Develop Merchant Analytics Dashboard
 ---
 ## Test Cases Passed ✅
-![alt text](<test-cases.png>)
+![image-generate-nhi-hui](<test-cases.png>)
