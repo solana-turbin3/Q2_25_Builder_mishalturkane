@@ -65,31 +65,31 @@ pub struct Receipt {
 ## 2 Instructions
 These handle transactions and interactions with the smart contract.
 
-- ``` initialize_merchant.rs ``` Defines the Merchant struct that holds data related to the merchant, like name, wallet address, total sales, etc.
-
+- ``` initialize_merchant.rs ``` Initializes a customer account using a (PDA) with a unique seed derived from the merchant and customer keys, ensuring secure and unique account creation.
 ``` bash
- #[account]
- pub struct Merchant {
-    pub merchant: Pubkey,    
-    pub authority: Pubkey,  
-    pub name: String,        
-    pub category: String,     
-}  
+  #[account(
+        init,
+        seeds = [b"merchant", authority.key().as_ref()],
+        bump,
+        payer = authority,
+        space = Merchant::INIT_SPACE
+    )]
+    pub merchant_account: Account<'info, Merchant>,
 
 ```
 
-- ``` initialize_customer.rs ``` Defines the Customer struct which stores customer-related information such as wallet, balance, or past purchases.
-
-
+- ``` initialize_customer.rs ``Initializes a customer account using a (PDA) with a unique seed derived from the merchant and customer keys, ensuring secure and unique account creation.
 ``` bash
+ #[account(
+        init,
+        seeds = [b"customer", merchant.key().as_ref(), customer.key().as_ref()],
+        bump,
+        payer = authority,
+        space = Customer::INIT_SPACE
+    )]
+    pub customer_account: Account<'info, Customer>, 
 
-#[account]
-pub struct Customer{
-    pub customer: Pubkey,     
-    pub name: String,         
-    pub phone: String,        
-    pub authority: Pubkey,   
-}
+```
 
 
 ```
@@ -98,14 +98,14 @@ pub struct Customer{
 
 
 ``` bash
-#[account]
-pub struct Receipt {
-    pub customer: Pubkey,      
-    pub merchant: Pubkey,     
-    pub item_name: String,          
-    pub item_description: String,  
-    pub item_price: f64,            
-}
+    #[account(
+        init,
+        seeds = [b"receipt", merchant.key().as_ref(), customer.key().as_ref()],
+        bump,
+        payer = authority,
+        space = Receipt::INIT_SPACE
+    )]
+    pub receipt: Account<'info, Receipt>,
 ```
 - ``` pay_bill.rs ``` Defines the Receipt struct to store transaction details between customer and merchant — like bill amount, timestamp, and payment status.
 
