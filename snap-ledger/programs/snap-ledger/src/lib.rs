@@ -18,7 +18,7 @@ pub mod snap_ledger {
     pub fn initialize_merchant(ctx: Context<InitMerchant>, name: String, category: String) -> Result<()> {
         instructions::InitMerchant::initialize_merchant(ctx, name, category)
     }
-  pub fn initialize_customer(ctx: Context<InitCustomer> ,name: String, phone: String) -> Result<()>{
+    pub fn initialize_customer(ctx: Context<InitCustomer> ,name: String, phone: String) -> Result<()>{
         instructions::InitCustomer::initialize_customer(ctx, name, phone)
     }
 
