@@ -8,7 +8,7 @@
 - [Deploed Contracct](https://explorer.solana.com/address/3EEkQkh4dQRysyEp7wE3PrSqNhpBbg91FhjtYEXK7Hsg?cluster=devnet)
 
 # Project Structure
-This command sets up a special Anchor workspace in a folder named snap-ledger, designed to support multiple Solana smart contracts. The structure includes folders for programs and tests, configuration files like Anchor.toml and Cargo.toml, and all necessary setup files(instructions/contexts).
+This command creates a multi-program Anchor workspace (snap-ledger) with built-in support for error handling, **state** and **instruction management**, and **testing—ideal** for building complex dApps with multiple smart contracts.
 
 ```bash 
 anchor init snap-ledger --template multiple
