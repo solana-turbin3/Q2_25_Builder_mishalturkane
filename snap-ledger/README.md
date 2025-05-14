@@ -18,7 +18,7 @@ anchor init snap-ledger --template multiple
 ---
 ## 1 Account Structure 
 These define data storage on Solana.
-- ``` bash merchant.rs ``` Defines the Merchant struct that holds data related to the merchant, like name, wallet address, total sales, etc.
+- ``` merchant.rs ``` Defines the Merchant struct that holds data related to the merchant, like name, wallet address, total sales, etc.
 
 ``` bash
  #[account]
@@ -31,7 +31,7 @@ These define data storage on Solana.
 
 ```
 
-- ``` bash customer.rs ``` Defines the Customer struct which stores customer-related information such as wallet, balance, or past purchases.
+- ``` customer.rs ``` Defines the Customer struct which stores customer-related information such as wallet, balance, or past purchases.
 
 
 ``` bash
@@ -47,7 +47,7 @@ pub struct Customer{
 
 ```
 
-- ``` bash receipt.rs ``` Defines the Receipt struct to store transaction details between customer and merchant — like bill amount, timestamp, and payment status.
+- ``` receipt.rs ``` Defines the Receipt struct to store transaction details between customer and merchant — like bill amount, timestamp, and payment status.
 
 
 ``` bash
@@ -59,6 +59,56 @@ pub struct Receipt {
     pub item_description: String,  
     pub item_price: f64,            
 }
- 
+```
+---
+
+## 2 Instructions
+These handle transactions and interactions with the smart contract.
+
+- ``` initialize_merchant.rs ``` Defines the Merchant struct that holds data related to the merchant, like name, wallet address, total sales, etc.
+
+``` bash
+ #[account]
+ pub struct Merchant {
+    pub merchant: Pubkey,    
+    pub authority: Pubkey,  
+    pub name: String,        
+    pub category: String,     
+}  
 
 ```
+
+- ``` initialize_customer.rs ``` Defines the Customer struct which stores customer-related information such as wallet, balance, or past purchases.
+
+
+``` bash
+
+#[account]
+pub struct Customer{
+    pub customer: Pubkey,     
+    pub name: String,         
+    pub phone: String,        
+    pub authority: Pubkey,   
+}
+
+
+```
+
+- ``` initialize_receipt.rs ``` Defines the Receipt struct to store transaction details between customer and merchant — like bill amount, timestamp, and payment status.
+
+
+``` bash
+#[account]
+pub struct Receipt {
+    pub customer: Pubkey,      
+    pub merchant: Pubkey,     
+    pub item_name: String,          
+    pub item_description: String,  
+    pub item_price: f64,            
+}
+```
+- ``` pay_bill.rs ``` Defines the Receipt struct to store transaction details between customer and merchant — like bill amount, timestamp, and payment status.
+
+---
+
+
