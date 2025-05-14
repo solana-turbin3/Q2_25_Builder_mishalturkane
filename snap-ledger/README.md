@@ -112,10 +112,8 @@ These handle transactions and interactions with the smart contract.
 - Smartcontract ✅
 - Testing ✅
 - Frontend 🏗️
+- ### Future Roadmap
+   - Implement PDF Bill Generation
+   - Develop Merchant Analytics Dashboard
 ---
-## Future Roadmap
-- Implement PDF Bill Generation
-- Develop Merchant Analytics Dashboard
----
-
 ## Test Cases Passed ✅
