@@ -65,7 +65,7 @@ pub struct Receipt {
 ## 2 Instructions
 These handle transactions and interactions with the smart contract.
 
-- ``` initialize_merchant.rs ``` Initializes a customer account using a (PDA) with a unique seed derived from the merchant and customer keys, ensuring secure and unique account creation.
+- ``` initialize_merchant.rs ``` Initializes a merchant account with a unique PDA for secure identification.
 ``` bash
   #[account(
         init,
@@ -78,8 +78,7 @@ These handle transactions and interactions with the smart contract.
 
 ```
 
-- ``` initialize_customer.rs ``` Initializes a customer account using a (PDA) with a unique seed derived from the merchant and customer keys, ensuring secure and unique account creation.
-
+- ``` initialize_customer.rs ``` Initializes a customer account with a unique PDA for secure identification.
 ``` bash
  #[account(
         init,
@@ -93,8 +92,7 @@ These handle transactions and interactions with the smart contract.
 ```
 
 
-- ``` initialize_receipt.rs ``` Defines the Receipt struct to store transaction details between customer and merchant — like bill amount, timestamp, and payment status.
-
+- ``` initialize_receipt.rs ``` Initializes a receipt account with a unique PDA for secure identification.
 
 ``` bash
     #[account(
@@ -106,8 +104,7 @@ These handle transactions and interactions with the smart contract.
     )]
     pub receipt: Account<'info, Receipt>,
 ```
-- ``` pay_bill.rs ``` Defines the Receipt struct to store transaction details between customer and merchant — like bill amount, timestamp, and payment status.
-
+- ``` pay_bill.rs ``` instruction likely handles the bill payment process. 
 ---
 
 
