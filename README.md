@@ -21,3 +21,5 @@ The `vault-anchor` project is a simple vault contract built using the Anchor fra
   - Withdraw SOL from the vault.
   - Track balance of the vault.
   - Testable with unit tests using Mocha.
+
+##Capsotone Project
