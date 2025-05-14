@@ -16,3 +16,4 @@ impl Space for Merchant {
         + 4 + 32                   // name (max 32 chars)
         + 4 + 32;                  // category (max 32 chars)
 }
+

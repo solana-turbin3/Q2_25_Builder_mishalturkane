@@ -16,3 +16,4 @@ impl Space for Customer{
     + 32;             // authority
 
 }
+
