@@ -10,3 +10,6 @@
 # Project Structure
 The contract follows a modular design with separate files for state management and business logic (instructions/contexts).
 
+```bash 
+anchor init snap-ledger --template multiple
+```
