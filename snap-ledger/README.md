@@ -9,14 +9,14 @@
 
 ---
 
-# Project Structure
+## Project Structure
 This command creates a multi-program Anchor workspace (snap-ledger) with built-in support for error handling, **state** and **instruction management**, and **testing—ideal** for building complex dApps with multiple smart contracts.
 
 ```bash 
 anchor init snap-ledger --template multiple
 ```
 ---
-## 1 Account Structure 
+### 1 Account Structure 
 These define data storage on Solana.
 - ``` merchant.rs ``` Defines the Merchant struct that holds data related to the merchant, like name, wallet address, total sales, etc.
 
@@ -62,7 +62,7 @@ pub struct Receipt {
 ```
 ---
 
-## 2 Instructions
+### 2 Instructions
 These handle transactions and interactions with the smart contract.
 
 - ``` initialize_merchant.rs ``` Initializes a merchant account with a unique PDA for secure identification.
@@ -108,3 +108,8 @@ These handle transactions and interactions with the smart contract.
 ---
 
 
+## Future Roadmap
+- Develop User-Friendly Frontend
+- Implement PDF Bill Generation
+- Explore Payment Gateway Integration
+- Develop Merchant Analytics Dashboard
