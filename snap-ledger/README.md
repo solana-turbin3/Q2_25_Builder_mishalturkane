@@ -121,5 +121,3 @@ These handle transactions and interactions with the smart contract.
 <<<<<<< HEAD
 ![not-faund](https://github.com/user-attachments/assets/f86d7dc4-0287-43d7-a61b-ad491ca2b872)
 =======
-![Screenshot 2025-05-11 232200](https://github.com/user-attachments/assets/f86d7dc4-0287-43d7-a61b-ad491ca2b872)
->>>>>>> 3f675dc8034d723579f7be0b16efee6b0b0e4a26
