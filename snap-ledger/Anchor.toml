@@ -6,7 +6,7 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-snap_ledger = "3EEkQkh4dQRysyEp7wE3PrSqNhpBbg91FhjtYEXK7Hsg"
+snap_ledger = "4M1ztMqBFjsZnhoTN1kbrKGzbNwRPSg64DQFgMKDorSw"
 
 
 [registry]

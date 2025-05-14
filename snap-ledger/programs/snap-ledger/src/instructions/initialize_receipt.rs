@@ -2,7 +2,6 @@ use anchor_lang::prelude::*;
 use crate::Merchant;
 use crate::Receipt;
 
-
 #[derive(Accounts)]
 #[instruction(name: String, description: String, price: u64)]
 pub struct InitReceipt<'info> {
@@ -18,7 +17,7 @@ pub struct InitReceipt<'info> {
     pub merchant: Account<'info, Merchant>,
     /// CHECK: We only read the public key to derive the PDA, no data is accessed.
     pub customer: UncheckedAccount<'info>,
-  
+
 
     #[account(mut)]
     pub authority: Signer<'info>,
@@ -26,21 +25,23 @@ pub struct InitReceipt<'info> {
     pub system_program: Program<'info, System>,
 }
 
-pub fn initialize_receipt(
-    ctx: Context<InitReceipt>,
-    name: String,
-    description: String,
-    price: f64,
-) -> Result<()> {
-    let receipt = &mut ctx.accounts.receipt;
+impl<'info> InitReceipt<'info> {
+    pub fn initialize_receipt(
+        ctx: Context<InitReceipt<'info>>,
+        name: String,
+        description: String,
+        price: f64,
+    ) -> Result<()> {
+        let receipt = &mut ctx.accounts.receipt;
 
-    // Set the fields for the receipt account
-    receipt.customer = ctx.accounts.customer.key();
-    receipt.merchant = ctx.accounts.merchant.authority;
-    receipt.timestamp = Clock::get()?.unix_timestamp; // Current timestamp
-    receipt.item_name = name;  // Item name (e.g., "Gold Chain")
-    receipt.item_description = description;  // Item description (e.g., "22K gold, 30 grams")
-    receipt.item_price = price;  // Price of the item (e.g., 50000)
+        // Set the fields for the receipt account
+        receipt.customer = ctx.accounts.customer.key();
+        receipt.merchant = ctx.accounts.merchant.authority;
+        receipt.timestamp = Clock::get()?.unix_timestamp; // Current timestamp
+        receipt.item_name = name;    // Item name (e.g., "Gold Chain")
+        receipt.item_description = description;    // Item description (e.g., "22K gold, 30 grams")
+        receipt.item_price = price;    // Price of the item (e.g., 50000)
 
-    Ok(())
+        Ok(())
+    }
 }

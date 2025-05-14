@@ -17,19 +17,22 @@ pub struct InitMerchant<'info> {
 
     pub system_program: Program<'info, System>,
 }
-pub fn initialize_merchant(
-    ctx: Context<InitMerchant>,
-    name: String,
-    category: String
-) -> Result<()> {
-    let merchant_account = &mut ctx.accounts.merchant_account;
 
-    // Assigning the merchant's details to the account
-    merchant_account.merchant = *ctx.accounts.authority.key;
-    merchant_account.name = name;
-    merchant_account.category = category;
+impl<'info> InitMerchant<'info> {
+    pub fn initialize_merchant(
+        ctx: Context<InitMerchant<'info>>,
+        name: String,
+        category: String
+    ) -> Result<()> {
+        let merchant_account = &mut ctx.accounts.merchant_account;
 
-    msg!("Merchant account created successfully for {}", merchant_account.name);
+        // Assigning the merchant's details to the account
+        merchant_account.merchant = *ctx.accounts.authority.key;
+        merchant_account.name = name;
+        merchant_account.category = category;
 
-    Ok(())
+        msg!("Merchant account created successfully for {}", merchant_account.name);
+
+        Ok(())
+    }
 }

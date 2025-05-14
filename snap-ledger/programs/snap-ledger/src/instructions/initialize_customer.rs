@@ -25,13 +25,20 @@ pub struct InitCustomer<'info> {
 
     pub system_program: Program<'info, System>,
 }
-pub fn initialize_customer(ctx: Context<InitCustomer>, name: String, phone: String) -> Result<()> {
-    let customer_account = &mut ctx.accounts.customer_account;
 
-    customer_account.customer = ctx.accounts.customer.key();
-    customer_account.name = name;
-    customer_account.phone = phone;
-    customer_account.authority = ctx.accounts.authority.key();
+impl<'info> InitCustomer<'info> {
+    pub fn initialize_customer(
+        ctx: Context<InitCustomer<'info>>,
+        name: String,
+        phone: String,
+    ) -> Result<()> {
+        let customer_account = &mut ctx.accounts.customer_account;
 
-    Ok(())
+        customer_account.customer = ctx.accounts.customer.key();
+        customer_account.name = name;
+        customer_account.phone = phone;
+        customer_account.authority = ctx.accounts.authority.key();
+
+        Ok(())
+    }
 }
