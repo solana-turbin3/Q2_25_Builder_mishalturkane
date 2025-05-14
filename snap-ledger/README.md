@@ -18,10 +18,17 @@ anchor init snap-ledger --template multiple
 ---
 ## 1 Account Structure 
 These define data storage on Solana.
-- ```bash 
-merchant.rs
+- ``` bash merchant.rs ``` Defines the Merchant struct that holds data related to the merchant, like name, wallet address, total sales, etc.
+``` bash
+ #[account]
+ pub struct Merchant {
+    pub merchant: Pubkey,    
+    pub authority: Pubkey,  
+    pub name: String,        
+    pub category: String,     
+}  
+ 
 ```
-➤ Defines the Merchant struct that holds data related to the merchant, like name, wallet address, total sales, etc.
 
-- customer.rs
-➤ Defines the Customer struct which stores customer-related information such as wallet, balance, or past purchases.
+- ``` bash customer.rs ``` Defines the Customer struct which stores customer-related information such as wallet, balance, or past purchases.
+- ``` bash receipt.rs ``` Defines the Receipt struct to store transaction details between customer and merchant — like bill amount, timestamp, and payment status.
