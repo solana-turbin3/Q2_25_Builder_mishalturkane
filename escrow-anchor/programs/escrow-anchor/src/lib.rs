@@ -15,6 +15,6 @@ pub mod escrow_anchor {
             ctx.accounts.init_escrow(seed,recieve, &ctx.bumps)?;
             ctx.accounts.deposit(deposit)?;
             Ok(())
-    }
+    } 
 
 }
