@@ -1,8 +1,7 @@
 use anchor_lang::{prelude::*,system_program::{Transfer, transfer}};
 
 declare_id!("AZ8BpLP7brN3JWJM7Fd4FgRGkRFefbyWemERui3eJwVe");
-
-
+// Program ID: This declares the program's unique identifier, a crucial address on the Solana blockchain.
 #[program]
 pub mod vault_anchor {
     use super::*;
@@ -11,7 +10,6 @@ pub mod vault_anchor {
         ctx.accounts.initialize(&ctx.bumps)
         
     }
-
     pub fn deposit(ctx: Context<Payment>, amount: u64)-> Result<()>{
         ctx.accounts.deposit(amount)
     }

@@ -10,7 +10,7 @@ pub use instructions::*;
 pub use state::*;
 
 declare_id!("3f1nayZnMrheUK9PJo7bb9MJTavyUmX73ijpMsG7JqvS");
-
+// Program ID: Specifies the unique identifier for this Solana program on the blockchain.
 #[program]
 pub mod snap_ledger {
     use super::*;
